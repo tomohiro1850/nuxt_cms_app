@@ -1,0 +1,46 @@
+{
+  "root": true,
+  "env": {
+    "es6": true,
+    "browser": true,
+    "node": true
+  },
+  "extends": [
+    "@nuxtjs/eslint-config-typescript",
+    "prettier",
+    "prettier/vue",
+    "airbnb-base",
+    "plugin:prettier/recommended",
+    "plugin:nuxt/recommended"
+  ],
+  "plugins": ["prettier", "vue"],
+  "rules": {
+    "prefer-template": "error",
+    "vue/html-self-closing": [
+      "error",
+      {
+        "html": {
+          "void": "always",
+          "normal": "always",
+          "component": "always"
+        },
+        "svg": "always",
+        "math": "always"
+      }
+    ],
+    // @componentsでエラーを吐かないようにする
+    "import/no-unresolved": [2, { "ignore": ["^@"] }],
+    // prettierと競合する可能性のあるルールをoff
+    "vue/singleline-html-element-content-newline": "off",
+    "vue/html-closing-bracket-newline": "off",
+    "vue/max-attributes-per-line": "off",
+    "vue/html-indent": "off",
+    "no-console": "off"
+  },
+  "parser": "vue-eslint-parser",
+  "parserOptions": {
+    "parser": "babel-eslint",
+    "ecmaVersion": 11,
+    "sourceType": "module"
+  }
+}
